@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Core document setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans — HTML version</title>
+
+    <!-- Performance hint: preconnect to Google Fonts domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Typography: Inter font family -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Local component styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top helper label to identify this static HTML version -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- Pricing cards wrapper -->
     <div class="cards-container">
+        <!-- Card 1: Hobby plan -->
         <div class="card">
+            <!-- Card header and plan details -->
             <div class="card-top">
                 <h3 class="card-title">Hobby</h3>
                 <p class="card-price">
                     <span class="card-price-amount">Free</span>
                 </p>
+
+                <!-- Feature list -->
                 <div class="card-content">
                     <p class="includes-text">Includes:</p>
                     <ul class="features-list">
@@ -36,9 +50,13 @@
                     </ul>
                 </div>
             </div>
+            <!-- Card call-to-action -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- Card 2: Pro plan -->
         <div class="card">
+            <!-- Card header and plan details -->
             <div class="card-top">
                 <h3 class="card-title">Pro</h3>
                 <p class="card-price">
@@ -67,7 +85,42 @@
                     </ul>
                 </div>
             </div>
+            <!-- Primary card call-to-action -->
             <button class="download-button primary">Get Pro</button>
+        </div>
+
+        <!-- Card 3: Enterprise plan -->
+        <div class="card">
+            <!-- Card header and plan details -->
+            <div class="card-top">
+                <h3 class="card-title">Enterprise</h3>
+                <p class="card-price">
+                    <span class="card-price-amount">Custom</span>
+                </p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            SSO and advanced security
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Team management controls
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Priority support
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Custom onboarding
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card call-to-action -->
+            <button class="download-button secondary">Contact Sales</button>
         </div>
     </div>
 </body>
