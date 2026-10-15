@@ -37,11 +37,11 @@
 }
 
 .card-title {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 28px;
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-size: 30px;
     line-height: 32px;
-    font-weight: 700;
-    letter-spacing: -0.025em;
+    font-weight: 800;
+    letter-spacing: -0.055em;
     color: #24133f;
     margin-bottom: 8px;
 }
