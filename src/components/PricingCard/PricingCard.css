@@ -37,9 +37,11 @@
 }
 
 .card-title {
-    font-size: 22px;
-    line-height: 28px;
-    font-weight: 400;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
     color: #24133f;
     margin-bottom: 8px;
 }
