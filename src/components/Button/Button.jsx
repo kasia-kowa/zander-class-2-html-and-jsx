@@ -11,7 +11,7 @@ function Button({ label, variant = "secondary" }) {
         // Template literal (``) builds the className dynamically
         // If variant is "primary", this becomes: className="download-button primary"
         // If variant is "secondary", this becomes: className="download-button secondary"
-        <button className={`download-button ${variant}`}>{label}</button>
+        <button type="button" className={`download-button ${variant}`}>{label}</button>
     );
 }
 

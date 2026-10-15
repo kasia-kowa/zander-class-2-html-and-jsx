@@ -1,6 +1,10 @@
 /* Pricing.css — LAYOUT STYLES FOR THE PRICING PAGE */
 /* This controls how the cards are arranged on the page */
 
+.pricing-page {
+    width: 100%;
+}
+
 .cards-container {
     position: relative;
     isolation: isolate;

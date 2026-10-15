@@ -7,7 +7,12 @@
 import PricingCard from '../components/PricingCard/PricingCard';
 import './Pricing.css';
 
-function Pricing() {
+function Pricing({
+    variant = 'original',
+    eyebrow,
+    headline,
+    description,
+}) {
     // DATA — each object holds all the content for one pricing card
     // Changing this data automatically updates what the cards display
     const hobbyPlan = {
@@ -34,17 +39,26 @@ function Pricing() {
         buttonVariant: 'primary',
     };
 
+    const isOriginal = variant === 'original';
+
     return (
-        // <> is a React Fragment — groups elements without adding extra HTML divs
-        <>
-            <p className="page-label"><strong>React App</strong> — running with Vite</p>
+        <main className={`pricing-page ${variant}`}>
+            {isOriginal ? (
+                <p className="page-label"><strong>React App</strong> — running with Vite</p>
+            ) : (
+                <header className="pricing-hero">
+                    <p className="pricing-eyebrow">{eyebrow}</p>
+                    <h1>{headline}</h1>
+                    <p className="pricing-description">{description}</p>
+                </header>
+            )}
             <div className="cards-container">
                 {/* The spread operator {...hobbyPlan} passes all object properties as individual props */}
                 {/* This is the same as: title="Hobby" price="Free" includesText="Includes:" etc. */}
                 <PricingCard {...hobbyPlan} />
                 <PricingCard {...proPlan} />
             </div>
-        </>
+        </main>
     );
 }
 
