@@ -44,3 +44,7 @@ body {
 .page-label strong {
     color: #24133f;
 }
+
+#root {
+    width: 100%;
+}
