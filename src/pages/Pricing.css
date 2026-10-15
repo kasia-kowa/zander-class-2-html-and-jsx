@@ -2,10 +2,79 @@
 /* This controls how the cards are arranged on the page */
 
 .cards-container {
+    position: relative;
+    isolation: isolate;
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 28px;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
+    padding: 72px;
+}
+
+.cards-container::before,
+.cards-container::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 46% 54% 62% 38%;
+    filter: blur(56px);
+    opacity: 0.82;
+    pointer-events: none;
+    will-change: transform, border-radius;
+}
+
+.cards-container::before {
+    width: 72%;
+    height: 82%;
+    top: 4%;
+    left: -2%;
+    background: linear-gradient(125deg, #00f5d4 4%, #7357ff 48%, #ff4dbe 96%);
+    animation: gradient-drift-one 10s ease-in-out infinite alternate;
+}
+
+.cards-container::after {
+    width: 62%;
+    height: 76%;
+    right: -4%;
+    bottom: 0;
+    background: linear-gradient(145deg, #ffea00 2%, #ff5e3a 46%, #b517ff 94%);
+    animation: gradient-drift-two 12s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-drift-one {
+    0% {
+        transform: translate3d(-5%, -3%, 0) rotate(-5deg) scale(0.95);
+        border-radius: 46% 54% 62% 38%;
+    }
+    100% {
+        transform: translate3d(14%, 8%, 0) rotate(10deg) scale(1.08);
+        border-radius: 61% 39% 43% 57%;
+    }
+}
+
+@keyframes gradient-drift-two {
+    0% {
+        transform: translate3d(6%, 7%, 0) rotate(7deg) scale(1.05);
+        border-radius: 55% 45% 37% 63%;
+    }
+    100% {
+        transform: translate3d(-16%, -9%, 0) rotate(-8deg) scale(0.92);
+        border-radius: 39% 61% 58% 42%;
+    }
+}
+
+@media (max-width: 760px) {
+    .cards-container {
+        flex-direction: column;
+        padding: 80px 24px 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cards-container::before,
+    .cards-container::after {
+        animation: none;
+    }
 }

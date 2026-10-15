@@ -2,14 +2,56 @@
 /* Matches the previous HTML project */
 
 .card {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 380px;
-    background-color: #f2f1ed;
-    border-radius: 4px;
-    padding: 16px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(244, 238, 255, 0.68));
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    padding: 24px;
     width: 320px;
     flex-shrink: 0;
+    box-shadow:
+        0 30px 80px rgba(11, 4, 32, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(18px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -105px;
+    right: -70px;
+    border-radius: 50%;
+    background: #ff48c4;
+    filter: blur(42px);
+    opacity: 0.32;
+    pointer-events: none;
+}
+
+.card:nth-child(2) {
+    background: linear-gradient(145deg, rgba(28, 17, 60, 0.92), rgba(61, 28, 94, 0.78));
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 30px 80px rgba(11, 4, 32, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.card:nth-child(2)::before {
+    background: #00f5d4;
+    opacity: 0.36;
+}
+
+.card:hover {
+    transform: translateY(-8px) rotate(-0.5deg);
+    box-shadow:
+        0 38px 90px rgba(11, 4, 32, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .card-top {
@@ -21,7 +63,7 @@
     font-size: 22px;
     line-height: 28px;
     font-weight: 400;
-    color: #26251e;
+    color: #24133f;
     margin-bottom: 8px;
 }
 
@@ -63,12 +105,38 @@
     align-items: center;
     margin-bottom: 8px;
     font-size: 16px;
-    color: #26251e;
+    color: #24133f;
 }
 
 .checkmark {
-    color: #26251e;
+    color: #9a21e8;
     font-size: 14px;
     margin-right: 10px;
     font-weight: 400;
+}
+
+.card:nth-child(2) .card-title,
+.card:nth-child(2) .features-list li {
+    color: #fff;
+}
+
+.card:nth-child(2) .card-price,
+.card:nth-child(2) .card-price-amount,
+.card:nth-child(2) .card-price-period,
+.card:nth-child(2) .includes-text {
+    color: rgba(255, 255, 255, 0.66);
+}
+
+.card:nth-child(2) .checkmark {
+    color: #60ffe5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
 }
