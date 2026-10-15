@@ -4,35 +4,52 @@
 .download-button {
     margin-top: auto;
     width: fit-content;
-    background-color: #e6e5e0;
-    border: none;
+    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid rgba(36, 19, 63, 0.16);
     border-radius: 999px;
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
-    color: #333;
+    color: #24133f;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    box-shadow: 0 8px 20px rgba(49, 25, 71, 0.1);
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .download-button:hover {
-    background-color: #D8D6CE;
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 12px 24px rgba(49, 25, 71, 0.14);
 }
 
 .download-button:active {
-    background-color: #D8D6CE;
+    transform: translateY(0);
 }
 
 /* Primary variant — for "Get Pro" button */
 .download-button.primary {
-    background-color: #111;
+    background: #24133f;
+    border-color: #24133f;
     color: #fff;
+    box-shadow: 0 10px 24px rgba(36, 19, 63, 0.2);
 }
 
 .download-button.primary:hover {
-    background-color: #333;
+    background: #392057;
+    box-shadow: 0 13px 28px rgba(36, 19, 63, 0.26);
 }
 
 .download-button.primary:active {
-    background-color: #333;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .download-button {
+        transition: none;
+    }
+
+    .download-button:hover {
+        transform: none;
+    }
 }

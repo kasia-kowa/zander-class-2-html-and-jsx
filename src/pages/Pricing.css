@@ -1,11 +1,90 @@
 /* Pricing.css — LAYOUT STYLES FOR THE PRICING PAGE */
 /* This controls how the cards are arranged on the page */
 
+.pricing-page {
+    width: 100%;
+}
+
 .cards-container {
+    position: relative;
+    isolation: isolate;
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 28px;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
+    padding: 72px;
+}
+
+.cards-container::before,
+.cards-container::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 46% 54% 62% 38%;
+    filter: blur(56px);
+    opacity: 0.82;
+    pointer-events: none;
+    will-change: transform, border-radius;
+}
+
+.cards-container::before {
+    width: 72%;
+    height: 82%;
+    top: 4%;
+    left: -2%;
+    background: linear-gradient(125deg, #00f5d4 4%, #7357ff 48%, #ff4dbe 96%);
+    background-size: 220% 220%;
+    animation: gradient-drift-one 6s ease-in-out infinite alternate;
+}
+
+.cards-container::after {
+    width: 62%;
+    height: 76%;
+    right: -4%;
+    bottom: 0;
+    background: linear-gradient(145deg, #ffea00 2%, #ff5e3a 46%, #b517ff 94%);
+    background-size: 220% 220%;
+    animation: gradient-drift-two 7s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-drift-one {
+    0% {
+        transform: translate3d(-12%, -7%, 0) rotate(-8deg) scale(0.9);
+        border-radius: 46% 54% 62% 38%;
+        background-position: 0% 30%;
+    }
+    100% {
+        transform: translate3d(26%, 15%, 0) rotate(14deg) scale(1.14);
+        border-radius: 61% 39% 43% 57%;
+        background-position: 100% 70%;
+    }
+}
+
+@keyframes gradient-drift-two {
+    0% {
+        transform: translate3d(14%, 12%, 0) rotate(10deg) scale(1.12);
+        border-radius: 55% 45% 37% 63%;
+        background-position: 100% 20%;
+    }
+    100% {
+        transform: translate3d(-28%, -16%, 0) rotate(-12deg) scale(0.88);
+        border-radius: 39% 61% 58% 42%;
+        background-position: 0% 80%;
+    }
+}
+
+@media (max-width: 760px) {
+    .cards-container {
+        flex-direction: column;
+        padding: 80px 24px 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cards-container::before,
+    .cards-container::after {
+        animation: none;
+    }
 }
