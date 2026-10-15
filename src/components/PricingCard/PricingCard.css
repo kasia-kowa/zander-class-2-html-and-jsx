@@ -35,11 +35,11 @@
 }
 
 .card:nth-child(2) {
-    background: linear-gradient(145deg, rgba(28, 17, 60, 0.92), rgba(61, 28, 94, 0.78));
-    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(145deg, rgba(252, 247, 255, 0.9), rgba(235, 224, 255, 0.76));
+    border-color: rgba(255, 255, 255, 0.72);
     box-shadow:
-        0 30px 80px rgba(11, 4, 32, 0.48),
-        inset 0 1px 0 rgba(255, 255, 255, 0.24);
+        0 30px 80px rgba(75, 35, 105, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .card:nth-child(2)::before {
@@ -117,18 +117,18 @@
 
 .card:nth-child(2) .card-title,
 .card:nth-child(2) .features-list li {
-    color: #fff;
+    color: #24133f;
 }
 
 .card:nth-child(2) .card-price,
 .card:nth-child(2) .card-price-amount,
 .card:nth-child(2) .card-price-period,
 .card:nth-child(2) .includes-text {
-    color: rgba(255, 255, 255, 0.66);
+    color: rgba(36, 19, 63, 0.58);
 }
 
 .card:nth-child(2) .checkmark {
-    color: #60ffe5;
+    color: #7a2bd1;
 }
 
 @media (prefers-reduced-motion: reduce) {
